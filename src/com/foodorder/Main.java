@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // ✅ Declare first
-        MenuManager manager = new MenuManager(scanner); // ✅ Now pass it
+        Scanner scanner = new Scanner(System.in); 
+        MenuManager manager = new MenuManager(scanner); 
 
         while (true) {
             System.out.println("\n=== Online Food Ordering ===");
@@ -18,7 +18,7 @@ public class Main {
 
             if (scanner.hasNextInt()) {
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // consume newline
+                scanner.nextLine(); 
 
                 switch (choice) {
                     case 1:
@@ -41,7 +41,7 @@ public class Main {
                 }
             } else {
                 System.out.println(" Please enter a valid number.");
-                scanner.nextLine(); // clear wrong input
+                scanner.nextLine(); 
             }
         }
     }
