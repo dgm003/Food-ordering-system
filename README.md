@@ -5,7 +5,7 @@ A simple, fully functional food ordering system with both GUI and CLI support. B
 
 📁 Project Structure
 
-Project_DBMS_Food_Ordering_System/
+<pre> '''Project_DBMS_Food_Ordering_System/
 ├── bin/                            # Compiled .class files
 ├── lib/                            # MySQL JDBC connector (JAR)
 ├── orders_export.csv               # Auto-generated order export file
@@ -28,7 +28,7 @@ Project_DBMS_Food_Ordering_System/
 │   │       ├── ViewOrdersFrame.java            # View food orders
 │   │       ├── ExportOrders.java               # Export orders as CSV
 │   │       └── PlaceOrderFrame.java            # GUI-based order placement
-
+</pre>
 
 ✅ Features Overview
 
