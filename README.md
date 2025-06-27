@@ -3,6 +3,7 @@
 A simple, fully functional food ordering system with both GUI and CLI support. Built using Java, MySQL, and Java Swing, this project serves as a great DBMS mini project with all core CRUD operations and export capabilities.
 
 
+
 📁 Project Structure
 
 <pre> '''Project_DBMS_Food_Ordering_System/
@@ -30,6 +31,8 @@ A simple, fully functional food ordering system with both GUI and CLI support. B
 │   │       └── PlaceOrderFrame.java            # GUI-based order placement
 </pre>
 
+
+
 ✅ Features Overview
 
 | Feature              | Terminal Version   | GUI Version          |
@@ -42,6 +45,8 @@ A simple, fully functional food ordering system with both GUI and CLI support. B
 | Place Order          | ✅                | ✅                   |
 | View Food Orders     | ✅                | ✅                   |
 | Export Orders to CSV | ✅                | ✅                   |
+
+
 
 
 🛠 Setup Instructions
@@ -64,6 +69,8 @@ java -cp ".;bin;lib/mysql-connector-j-9.3.0.jar" com.foodorder.App
 java -cp ".;bin;lib/mysql-connector-j-9.3.0.jar" com.foodorder.Main
 
 
+
+
 👤 Admin Credentials:
 Terminal: Username- admin 
           Password- password
@@ -74,6 +81,8 @@ APP/GUI: Username- admin
 You can modify these in LoginFrame.java and Main.java.
 
 
+
+
 📤 Export Format (CSV):
 
 File: orders_export.csv
@@ -82,12 +91,16 @@ OrderID,Customer,Item,Quantity,Price,Total
 101,Harish,Rice and Sambar,2,300.0,600.0
 
 
+
+
 🧪 Sample Menu Data:
 
 INSERT INTO menu_items (name, price) VALUES
 ('Rice and Sambar', 300),
 ('Curd', 200),
 ('Dal Roti', 100);
+
+
 
 
 👨‍💻 Developed By
