@@ -6,10 +6,16 @@ import java.util.Scanner;
 public class MenuManager {
     private Scanner scanner;
 
+    // Constructor for CLI (with Scanner)
     public MenuManager(Scanner scanner) {
         this.scanner = scanner;
     }
-
+    
+    // Constructor for GUI (no Scanner)
+    public MenuManager() {
+        this.scanner = new Scanner(System.in);
+    }
+    
     public void addMenuItem() {
         System.out.print("Enter item name: ");
         String name = scanner.nextLine();
@@ -34,6 +40,19 @@ public class MenuManager {
         }
     }
 
+    //For adding menu items in the GUI
+    public void addMenuItem(String name, double price) {
+         try (Connection conn = DBConnection.getConnection()) {
+            String sql = "INSERT INTO menu_items (name, price) VALUES (?, ?)";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, name);
+            stmt.setDouble(2, price);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void viewMenu() {
         try (Connection conn = DBConnection.getConnection()) {
             String sql = "SELECT item_id, name, price FROM menu_items";
@@ -47,6 +66,58 @@ public class MenuManager {
             }
         } catch (SQLException e) {
             System.out.println(" Error while retrieving menu");
+            e.printStackTrace();
+        }
+    }
+    public void deleteMenuItem() {
+        try (Connection conn = DBConnection.getConnection()) {
+            System.out.print("Enter item ID to delete: ");
+            int itemId = scanner.nextInt();
+            scanner.nextLine(); // consume newline
+
+            String sql = "DELETE FROM menu_items WHERE item_id = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, itemId);
+
+            int rows = stmt.executeUpdate();
+            if (rows > 0) {
+                System.out.println("[DELETED] Item deleted successfully!");
+            } else {
+                System.out.println(" No item found with that ID.");
+            }
+        } catch (SQLException e) {
+            System.out.println(" Error while deleting item");
+            e.printStackTrace();
+        }
+    }
+
+    public void updateMenuItems() {
+        try (Connection conn = DBConnection.getConnection()) {
+            System.out.print("Enter item ID to update: ");
+            int itemId = scanner.nextInt();
+            scanner.nextLine(); // consume newline
+
+            System.out.print("Enter new name: ");
+            String newName = scanner.nextLine();
+
+            System.out.print("Enter new price: ");
+            double newPrice = scanner.nextDouble();
+            scanner.nextLine(); // consume newline
+
+            String sql = "UPDATE menu_items SET name = ?, price = ? WHERE item_id = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, newName);
+            stmt.setDouble(2, newPrice);
+            stmt.setInt(3, itemId);
+
+            int rows = stmt.executeUpdate();
+            if (rows > 0) {
+                System.out.println("Item updated successfully!");
+            } else {
+                System.out.println(" No item found with that ID.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error while updating item");
             e.printStackTrace();
         }
     }

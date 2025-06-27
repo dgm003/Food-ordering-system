@@ -1,0 +1,11 @@
+Order ID,Customer,Item,Quantity,Price,Total Order Amount
+10,Sachin,Rice and Sambhar,3,300.0,1700.0
+10,Sachin,Dal Roti,4,200.0,1700.0
+9,Mitch,Dal Roti,2,200.0,400.0
+8,Harish,Rice and Sambhar,4,300.0,1800.0
+8,Harish,Curd,2,200.0,1800.0
+8,Harish,Dal Roti,1,200.0,1800.0
+7,Aman,Curd,3,200.0,300.0
+6,Dhanush,Dal Roti,2,200.0,1300.0
+6,Dhanush,Rice and Sambhar,3,300.0,1300.0
+5,Dhanush ,Rice and Sambhar,4,300.0,1200.0
