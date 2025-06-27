@@ -2,6 +2,7 @@
 
 A simple, fully functional food ordering system with both GUI and CLI support. Built using Java, MySQL, and Java Swing, this project serves as a great DBMS mini project with all core CRUD operations and export capabilities.
 
+
 📁 Project Structure
 
 Project_DBMS_Food_Ordering_System/
